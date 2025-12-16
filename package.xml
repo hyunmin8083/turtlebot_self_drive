@@ -2,10 +2,10 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>self_drive</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="pi@todo.todo">pi</maintainer>
-  <license>TODO: License declaration</license>
+  <version>0.0.2</version>
+  <description>ROS2 Turtlebot3 Self driving (centering/avoid) </description>
+  <maintainer email="hyunmin020823@naver.com">pi</maintainer>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
