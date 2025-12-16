@@ -23,7 +23,7 @@ class SelfDrive : public rclcpp::Node
   const float SAFE_DISTANCE = 0.55;
   const float ROBOT_WIDTH = 0.28;
   const float CORRIDOR_WIDTH = 0.4;
-  const float KP_ANGULAR = 2.0;   // sensitivity (P제어 상수)
+  const float KP_ANGULAR = 2.00;   // sensitivity (P제어 상수)
 
 public:
   SelfDrive();
