@@ -65,9 +65,9 @@ geometry_msgs::msg::TwistStamped SelfDrive::decide_movement(float front, float l
   if (front < SAFE_DISTANCE)
   {
     if (left > right) {
-      vel.twist.angular.z = 1.3;
+      vel.twist.angular.z = 1.30;
     } else {
-      vel.twist.angular.z = -1.3;
+      vel.twist.angular.z = -1.30;
     }
   }
   else
