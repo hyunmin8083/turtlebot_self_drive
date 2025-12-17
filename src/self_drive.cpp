@@ -17,8 +17,8 @@ void SelfDrive::subscribe_scan(const sensor_msgs::msg::LaserScan::SharedPtr scan
 {
  // 센서 데이터 처리
   float front_dist = get_range_avg(scan, 0, 20);         //전방 0도 기준 +-20도
-  float left_dist = get_range_avg(scan, 40, 15);         //40도 기준 +-20도
-  float right_dist = get_range_avg(scan, 320, 15);       //320도 기준 +-20도
+  float left_dist = get_range_avg(scan, 40, 15);         //40도 기준 +-15도
+  float right_dist = get_range_avg(scan, 320, 15);       //320도 기준 +-15도
 
 // 주행 명령 결정
   geometry_msgs::msg::TwistStamped vel = decide_movement(front_dist, left_dist, right_dist);
@@ -65,9 +65,9 @@ geometry_msgs::msg::TwistStamped SelfDrive::decide_movement(float front, float l
   if (front < SAFE_DISTANCE)
   {
     if (left > right) {
-      vel.twist.angular.z = 1.30;
+      vel.twist.angular.z = TARGET_ANGULAR; ( = 1.3 )
     } else {
-      vel.twist.angular.z = -1.30;
+      vel.twist.angular.z = -TARGET_ANGULAR; ( = -1.3 )
     }
   }
   else
