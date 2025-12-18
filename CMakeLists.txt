@@ -19,6 +19,10 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 add_executable(self_drive src/self_drive.cpp)
+target_include_directories(self_drive PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>
+)
 ament_target_dependencies(
   self_drive
   rclcpp
@@ -29,7 +33,10 @@ ament_target_dependencies(
 install(TARGETS
   self_drive
   DESTINATION lib/${PROJECT_NAME}
+)
 
+install(DIRECTORY include/
+  DESTINATION include
 )
 
 ament_package()
